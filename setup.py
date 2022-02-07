@@ -5,7 +5,7 @@ with open("README.md", "r", encoding="utf-8") as fh:
 
 setuptools.setup(
     name="gexchange",
-    version="0.0.2",
+    version="0.0.3",
     author="Talha Asghar",
     author_email="talhaasghar.contact@simplelogin.fr",
     description="A simple Python CLI tool using which you can see exchange rates among different currencies of the world in your Terminal.",
@@ -20,6 +20,6 @@ setuptools.setup(
         ],
     python_requires='>=3.6',
     install_requires=[i for i in open('requirements.txt').readlines() if len(i) != 0],
-    entry_points={'console_scripts': ['gexchange = xchg:main.main']}
+    entry_points={'console_scripts': ['gex = xchg:main.main']}
 	
 )
