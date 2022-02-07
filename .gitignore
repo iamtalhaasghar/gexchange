@@ -1,0 +1,5 @@
+build/
+dist/
+googleweather.egg-info/
+venv/
+
