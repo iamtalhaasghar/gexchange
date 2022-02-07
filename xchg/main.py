@@ -27,7 +27,7 @@ def main():
   import sys
   try:
     query('+'.join(sys.argv[1:]))
-except Exception as ex:
+  except Exception as ex:
     print('I can not understand.')
 if __name__== "__main__":
     main()
