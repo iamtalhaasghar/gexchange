@@ -1,5 +1,5 @@
 build/
 dist/
-googleweather.egg-info/
+*.egg-info/
 venv/
 

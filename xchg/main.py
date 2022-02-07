@@ -12,16 +12,22 @@ def query(keywords):
 
     soup=BeautifulSoup(response.text, 'html.parser')
     div = soup.find(id='knowledge-currency__updatable-data-column')
-    childs = list(div.children)[:2]
-    output = ''
-    for i in childs:
-        output += ' ' + i.text.strip()
-    print(output.replace(' equals', '\u2248 ').split('·')[0].strip())
+    if div is not None:
+        childs = list(div.children)[:2]
+        output = ''
+        for i in childs:
+            output += ' ' + i.text.strip()
+        print(output.replace('equals', '\u2248').split('·')[0].strip())
+    else:
+        # may be user requested a crypto exchange repeatone
+        div = soup.find(id='crypto-updatable_2')
+        print(list(div.div.children)[1].text.strip())
+
 def main():
   import sys
   try:
     query('+'.join(sys.argv[1:]))
-  except Exception as ex:
-    print(ex)
+except Exception as ex:
+    print('I can not understand.')
 if __name__== "__main__":
     main()
